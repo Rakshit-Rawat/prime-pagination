@@ -8,7 +8,7 @@ A React + TypeScript application built using **Vite** that displays paginated da
 
 ## 🔧 Tech Stack
 
-- **React 18** with **TypeScript**
+- **React 19** with **TypeScript**
 - **Vite** for fast development and build
 - **PrimeReact** for UI components (DataTable, OverlayPanel, Tooltip, Spinner)
 - **CSS Modules / Inline Styling** for layout and responsiveness
@@ -45,7 +45,7 @@ A React + TypeScript application built using **Vite** that displays paginated da
 
 ```bash
 # Clone the repository
-git clone [https://github.com/your-username/prime-pagination.git](https://github.com/Rakshit-Rawat/prime-pagination)
+git clone https://github.com/your-username/prime-pagination.git
 cd prime-pagination
 
 # Install dependencies
