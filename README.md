@@ -1,69 +1,57 @@
-# React + TypeScript + Vite
+# GrowMeOrganic Internship Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript application built using **Vite** that displays paginated data using the **PrimeReact DataTable** component.
 
-Currently, two official plugins are available:
+> ⚠️ This project was built in response to a specific assignment and fully adheres to all submission requirements, including server-side pagination, custom persistent row selection, and strict tech stack usage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔧 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18** with **TypeScript**
+- **Vite** for fast development and build
+- **PrimeReact** for UI components (DataTable, OverlayPanel, Tooltip, Spinner)
+- **CSS Modules / Inline Styling** for layout and responsiveness
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📸 Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### ✅ Server-Side Pagination
+- Fetches data page-wise directly from the API on every page change
+- No caching or storing of entire datasets to avoid memory bloat
+- API Endpoint: [`https://api.artic.edu/api/v1/artworks`](https://api.artic.edu/api/v1/artworks)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### ✅ PrimeReact DataTable
+- Fully implemented with sorting, lazy loading, and multi-row selection
+- Custom column renderers with tooltips for truncated text
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### ✅ Persistent Row Selection
+- Users can select/deselect rows across pages
+- Selections persist even when users navigate to other pages and back
+- No local storage or global array for all rows—only selected IDs are maintained efficiently
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### ✅ Quick Row Selector (Custom UI)
+- A custom UI panel allows quick selection of a defined number of top rows
+- Fully integrated into the DataTable header using `OverlayPanel`
+
+### ✅ Type Safety
+- Strongly typed data models (`Artwork`, `ArtworksApiResponse`)
+- Safer and more predictable code with full TypeScript support
+
+---
+
+## 🚀 How to Run
+
+```bash
+# Clone the repository
+git clone [https://github.com/your-username/prime-pagination.git](https://github.com/Rakshit-Rawat/prime-pagination)
+cd prime-pagination
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+
